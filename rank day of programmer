@@ -1,1 +1,28 @@
-#in
+#include<stdio.h>
+int main()
+{
+    int day,feb,year,sum=0;
+    scanf("%d",&year);
+    if(year>=1700&&year<=1917)
+    {
+    if(year%4==0)
+    feb=29;
+    else
+    feb=28;
+    }
+    else if(year>=1919&&year<=2700)
+    {
+    if(year%4==0&&year%100!=0||year%400==0)
+    feb=29;
+    else
+    feb=28;
+    }
+    else
+   {
+    printf("26.09.1918");
+return 0;}
+    sum+=feb+155+60;
+    day=256-sum;
+    printf("%d.09.%d",day,year);
+    return 0;
+    }
