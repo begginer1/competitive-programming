@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{ int n,i,m,j,k,no;
+    scanf("%d",&n);
+    int score[n];
+    int rank[n];
+    for(i=0;i<n;i++)
+    scanf("%d",&score[i]);
+    scanf("%d",&m);
+    int alice[m];
+     for(i=0;i<m;i++)
+    scanf("%d",&alice[i]);
+for(i=0;i<n;)
+{for(j=0;j<n-1;j++)
+{
+if(score[j]!=score[j+1])
+{
+rank[i]=score[j];
+i++;
+}
+}
+break;
+}
+if(score[j-1]!=score[j])
+rank[i]=score[j];
+no=i;
+for(i=0;i<m;i++)
+{k=1;
+for(j=0;j<no+1;j++)
+{
+if(rank[j]>alice[i])
+k++;
+else
+break;
+}
+printf("%d\n",k);
+}
+return 0;
+}
