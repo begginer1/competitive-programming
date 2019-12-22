@@ -12,3 +12,12 @@ len=strlen(word);
 for(i=0;i<26;i++)
 a[i]=(char)(97+i);
 for(i=0;i<len;i++)
+for(j=0;j<26;j++)
+{
+if(a[j]==word[i])
+if(large<h[j])
+large=h[j];
+}
+printf("%d ",large*len);
+return 0;
+}
