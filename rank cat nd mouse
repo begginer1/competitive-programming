@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int t,c1,i,c2,m;
+    scanf("%d",&t);
+    for(i=1;i<=t;i++)
+    {
+      scanf("%d",&c1);
+         scanf("%d",&c2);
+         scanf("%d",&m);
+if(abs(m-c1)<abs(m-c2))
+{
+  printf("Cat A\n");}
+    else if(abs(m-c1)>abs(m-c2))
+       {printf("Cat B\n");}
+else
+ { printf("Mouse C\n");}
+    }
+return 0;
+}
