@@ -1,0 +1,14 @@
+#include<string.h>
+#include<stdio.h>
+#include<ctype.h>
+int main()
+{
+int h[26],i,j;char word[10],len=0,large=0;
+char a[26];
+for(i=0;i<26;i++)
+scanf("%d",&h[i]);
+scanf("%s",word);
+len=strlen(word);
+for(i=0;i<26;i++)
+a[i]=(char)(97+i);
+for(i=0;i<len;i++)
