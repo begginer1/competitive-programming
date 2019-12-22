@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,t,i,a=0,b=7;
+    scanf("%d",&t);
+    for(i=1;i<=t;i++)
+    {
+        scanf("%d",&n);
+   if (abs(b-n)>abs(a-n))
+   {
+   printf("A\n");
+   a=n;
+   }
+   
