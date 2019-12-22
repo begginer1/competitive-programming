@@ -7,9 +7,29 @@ int main()
     for(i=1;i<=t;i++)
     {
         scanf("%d",&n);
-   if (abs(b-n)>abs(a-n))
+   if (abs(b-n)>abs(a-n))                           //if a is closer
    {
    printf("A\n");
-   a=n;
+   a=n;                                         //now postion of lift
    }
-   
+   else if(abs(b-n)==abs(a-n))         //if both are at equal distance thn lower one will go
+   {
+       if(b>a)                         
+       {
+       printf("A\n");
+   a=n;
+       }
+   else
+   {
+       printf("B\n");
+     b=n;
+   }
+   }
+   else                           //if b is closer
+   {
+   printf("B\n");
+     b=n;                       //now postion of lift
+    }
+    }
+    return 0;
+}
