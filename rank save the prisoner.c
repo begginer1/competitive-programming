@@ -6,18 +6,26 @@ scanf("%d",&t);
 for(i=1;i<=t;i++)
 {
 scanf("%d%d%d",&n,&m,&s);
-j=s;
-for(;j<=n;j++)
+for(j=s;j<=n;j++)
 {
-m--;
-if(j==n&&m!=0)
-{ m--;
-j=1;
+m=m-1;
+if(j==n)
+{
+    if(m==0)
+    {
+    printf("%d\n",j);
+    m=1;
+    break;}  
+               //agr j print ho gya mtlb m 0 hah
+else
+j=0;            //count krne ki jaruat nhi tb
 }
-if(m==0)
+else if(m==0)
+{
+printf("%d\n",j);
 break;
 }
-printf("%d\n",j);
+}
 }
 return 0;
 }
