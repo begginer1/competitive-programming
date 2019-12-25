@@ -1,0 +1,10 @@
+#include<stdio.h>
+int acmicpc(int str[],int size)
+{ int i,j,c1,c2;
+for(i=0;i<size;i++)
+{ 
+    if(str[i]!=str[j])
+    c1++;
+    else
+    c2++;
+}
