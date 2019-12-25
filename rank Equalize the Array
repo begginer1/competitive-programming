@@ -44,10 +44,10 @@ printf("%d ",size-1);
 else
 {
 k=(c1>c2)?c1:c2;
-if(size-k<size-(size-k))
-printf("%d",size-k);
+if(k==(size-k))
+printf("%d",k);
 else
-printf("%d",size-(size-k));
+printf("%d",(size-k));
 }
 return 0;
 }
