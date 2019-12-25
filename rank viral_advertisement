@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+int n,i,floor=5,rec=0;
+scanf("%d",&n);
+for(i=1;i<=n;i++)
+{
+floor=floor/2;
+rec=rec+floor;
+floor=floor*3;
+}
+printf("%d",rec);
+return 0;
+}
