@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{int n,i,k,b,sum=0;
+  scanf("%d%d",&n,&k);
+  int bill[n];
+  for(i=0;i<n;i++)
+  scanf("%d",&bill[i]);
+  scanf("%d",&b);
+for(i=0;i<n;i++)
+if(i!=k)
+sum+=bill[i];
+if(b==sum/2)
+printf("Bon Appetit");
+else
+printf("%d",b-sum/2);
+return 0;
+}
+
+
