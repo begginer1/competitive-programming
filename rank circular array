@@ -1,0 +1,40 @@
+#include<stdio.h>
+void fun(int a[], int size)
+{ int i,key;
+for(i=size-1;i>1;i--)
+{
+if(i==size-1)
+{
+    key=a[0];
+    a[0]=a[size-1];
+}
+a[size-1]=a[(size-1)-1];
+}
+a[i]=key;
+} 
+
+int main()
+{
+int i,k,n,q,m;
+scanf("%d%d%d",&n,&k,&q);
+int a[n];
+int rep[q];
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+for(i=0;i<q;i++)
+scanf("%d",&rep[i]);
+if(k%n!=0)                      //taking agr size jitna hah toh rotate nhi krna
+{
+while(k!=0)
+{
+fun(&a[0],n);
+k--;
+}
+}
+for(i=0;i<q;i++)
+{
+    if(rep[i]==i)
+    printf("%d\n",a[i]);
+}
+return 0;
+}
