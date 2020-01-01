@@ -1,0 +1,23 @@
+#include<stdio.h>
+int fun(int no)
+{ int c=0,n;int copy=no;
+while(no>0)
+{
+ n=no%10;
+  if(n!=0&&copy%n==0)
+    c++;
+    no=no/10;
+}
+    return c;
+}
+int main()
+{ int n,t,i,c;
+scanf("%d",&t);
+for(i=1;i<=t;i++)
+{
+scanf("%d",&n);
+c=fun(n);
+printf("%d\n",c);
+}
+return 0;
+}
