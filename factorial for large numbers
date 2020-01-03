@@ -1,0 +1,29 @@
+#include<stdio.h>
+int fac(int res[],int j,int size)
+{ int carry=0,no,i;
+    for(i=0;i<=size;i++)
+{
+ no=res[i]*j+carry;
+res[i]=no%10;
+carry=no/10;
+}
+while(carry)
+{ size++;
+no=carry%10;
+res[size]=no;
+carry=carry/10;
+}
+return size;
+}
+int main()
+{ int i,n,no,size=0;
+scanf("%d",&n);
+int res[500];
+res[size]=1;
+for(i=2;i<=n;i++)
+{ size=fac(res,i,size);
+}
+for(i=size;i>=0;i--)
+printf("%d",res[i]);
+return 0;
+}
