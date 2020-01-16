@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{ int i,t,cg,cp,n,j,k,c,y,min;
+    scanf("%d",&t);
+    int a[10][2];
+    for(i=1;i<=t;i++)
+    { c=0,y=0;
+    scanf("%d%d",&cg,&cp);
+    scanf("%d",&n);
+    a[n][2];
+    for(j=0;j<n;j++)
+    {
+        for(k=0;k<2;k++)
+        {scanf("%d",&a[j][k]);
+    if(a[j][k]==1&&k==0)
+        c++;
+       else if(a[j][k]==1&&k==1)
+        y++;
+        }
+    }
+    min=(cg>cp)?cp:cg;
+    int max=(cg>cp)?cg:cp;
+    printf("%d\n",(c>y)?(c*min+y*max):(y*min+c*max));
+    }  
+return 0;    
+}
