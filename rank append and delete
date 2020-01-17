@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{ int i,k,c=-1,l,d,N;      // c=-1 because denoting array index
+char s[100],t[100];
+scanf("%s %s",s,t);
+scanf("%d",&N);
+l=strlen(s);
+d=strlen(t);
+for(i=0;i<l&&i<d;i++)
+{
+    if(s[i]==t[i])
+    c++;
+    else {
+        k=0;
+    break;}
+}
+if(c==(d-1))           //condition when both array are equal 
+{
+if(N==c+2+d)           //+2 due to extra delete and because count is-1
+printf("Yes");
+else 
+printf("No");
+}
+else if(k==0&&c==-1)       // when no element match ina array 
+{
+if(N==l+1+d)
+printf("Yes");
+else
+printf("No");
+}
+else                                     // when some element match in an array 
+{
+    if((l-(c+1)+d-(c+1))==N)
+    printf("Yes");
+    else
+    printf("No");
+}
+return 0;
+}
