@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+int main()
+{char a[500],s[500],i;
+    scanf("%s",s);
+    strcpy(a,s);
+    int d=strlen(s);
+    for(i=0;i<d;i++)
+    a[abs(d-1-i)]=s[i];
+    if(strcmp(s,a)==0)
+    printf("YES");
+    else
+    printf("NO");
+return 0;}
