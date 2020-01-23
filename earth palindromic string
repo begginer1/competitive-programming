@@ -2,12 +2,15 @@
 #include<string.h>
 #include<math.h>
 int main()
-{char a[500],s[500],i;
+{char a[500],s[500],temp;int i;
     scanf("%s",s);
     strcpy(a,s);
     int d=strlen(s);
-    for(i=0;i<d;i++)
-    a[abs(d-1-i)]=s[i];
+    for(i=0;i<d/2;i++)
+ {   temp=s[i];
+    s[i]=s[d-i-1];
+    s[d-1-i]=s[i];
+}
     if(strcmp(s,a)==0)
     printf("YES");
     else
