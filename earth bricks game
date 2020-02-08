@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{ int n,c,i;
+scanf("%d",&n);
+int *p;
+p=&n;
+for(i=1;i<1000;i++)
+  {
+   if((n=(n-i))<=0)
+   { c=1;
+       break;
+   }
+  if((n=(n-(i*2)))<=0)
+  {c=0;
+  break;
+  }
+}
+if(c==1)
+    printf("Patlu");
+else
+    printf("Motu");
+return 0;
+}
