@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{ int n,i,min,c,j,flag;
+scanf("%d",&n);
+int a[n];
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+min=a[0];
+for(i=1;i<n;i++)
+if(a[i]<min)
+    min=a[i];
+    printf("%d\n",n);
+while(1)
+{c=0,flag=1;
+for(i=0;i<n;i++)
+{
+    a[i]-=min;
+}
+    for (j=0; j<n;j++)
+   {
+    if(a[j]>0)
+    {c++;
+    if(flag)
+    {
+    min=a[j];
+   flag--;
+   }
+    }
+    if(a[j]<min&&a[j]>0)
+    min=a[j];
+}
+if(c!=0)
+printf("%d\n",c);
+else
+break;
+}
+    return 0;
+}
