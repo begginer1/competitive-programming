@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+long long int i,t,n,c;
+scanf("%lld",&t);
+while(t--)
+{
+scanf("%lld",&n);
+c=n/2;
+printf("%lld\n",c*abs(n-c));
+}
+    return 0;
+}
