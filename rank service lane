@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+ int i,j,n,t,small;
+ scanf("%d%d",&n,&t);
+ int *p=(int*)malloc(sizeof(int)*n);
+for(i=0;i<n;i++)
+scanf("%d",(p+i));
+while(t--)
+{scanf("%d%d",&i,&j);
+small=p[i];
+for(i=i+1;i<=j;i++)
+if(small>p[i])
+small=p[i];
+printf("%d\n",small);
+}
+    return 0;
+}
