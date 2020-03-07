@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+    int i=1,n,c=0;
+    scanf("%d",&n);
+        while(1){
+         if(i%3!=0)
+         printf("*   *\n");
+         else{
+             c++;
+             if(c>n)
+             break;
+             else
+            printf("*****\n");
+       }i++;
+    }
+    return 0;
+}
