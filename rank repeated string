@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+unsigned long long int i,d,n,c1=0,c2=0,wstr,sstr;
+char str[101];
+gets(str);
+scanf("%llu",&n);
+d=strlen(str);
+for(i=0;i<d;i++)
+if(str[i]=='a')
+c1++;
+wstr=n/d;
+sstr=n%d;
+for(i=0;i<sstr;i++)
+if(str[i]=='a')
+c2++;
+printf("%llu",c1*wstr+c2);
+    return 0;
+}
