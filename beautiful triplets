@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+int i,j,n,c=0,d,k;
+scanf("%d%d",&n,&d);
+int a[n];
+for(i=0;i<n;i++)
+scanf("%d",(a+i));
+for(i=0;i<n-1;i++)
+{k=-1;
+for(j=i+1;j<n;j++){
+if(a[j]-a[i]==d&&k==-1)
+    k=j;
+else if(j>k&&k>0)
+{
+if(a[j]-a[k]==d){
+c++;
+break;
+}
+}
+}
+}
+printf("%d",c);
+return 0;
+}
