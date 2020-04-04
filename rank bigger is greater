@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{ int n,l,i,k,m,j,f=0,small;
+char a[50];
+char temp;
+scanf("%d",&n);
+getchar();
+char arr[n][50];
+for(i=0;i<n;i++)
+scanf("%s",&arr[i][50]);
+for(i=0;i<n;i++)
+{f=0;
+strcpy(a,&arr[i][50]);
+l=strlen(a);
+    for(j=l-1;j>0;j--)
+    { 
+ if(a[j-1]<a[j]){
+ f=1;
+   break;
+    }
+    }
+if(f==0)
+printf("no answer\n");
+        else
+        {
+            small=a[j];
+            f=j;
+            for(k=j;k<l;k++){
+            if(a[j-1]<a[k]&&small>a[k])
+            {
+             small=a[k];
+              f=k;
+            }  
+         }
+        temp=a[j-1];
+        a[j-1]=a[f];
+        a[f]=temp;
+        for(;j<l-1;j++)
+        {
+        for(m=j+1;m<l;m++)
+        if(a[j]>a[m])
+        {
+            temp=a[j];
+        a[j]=a[m];
+        a[m]=temp;
+        }
+        }
+        printf("%s\n",a);
+        }
+}
+    return 0;
+}
