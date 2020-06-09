@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{int i,c=0;
+char a[100],b[]="SOS";
+scanf("%s",a);
+for(i=0;a[i];i++)
+{
+if(b[i%3]!=a[i])
+c++;
+}
+printf("%d",c);
+    return 0;
+    }
