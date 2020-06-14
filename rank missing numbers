@@ -1,0 +1,88 @@
+#include<stdio.h>
+#include<stdlib.h>
+void sort(int *a,int l,int m,int r);
+void merge(int *a,int l,int r);
+void sort(int *a,int l,int m,int r)
+{
+int n1=m-l+1;int n2=r-m;int i,j,k;
+int L[n1],R[n2];
+for(i=0;i<n1;i++)
+L[i]=a[l+i];
+for(j=0;j<n2;j++)
+R[j]=a[m+1+j];
+i=0,j=0,k=l;
+while(i<n1&&j<n2)
+{
+    if(L[i]<=R[j]){
+    a[k]=L[i];
+    i++;
+      }
+else{
+a[k]=R[j];
+    j++;
+    }
+    k++;
+}
+while(i<n1){
+    a[k]=L[i];
+    i++,k++;
+}
+while(j<n2){
+    a[k]=R[j];
+    j++,k++;
+}
+}
+void merge(int *a,int l,int r)
+{
+if(l<r)
+{
+    int m=l+(r-l)/2; 
+       merge(a,l,m);
+       merge(a,m+1,r);
+    sort(a,l,m,r);
+}
+}
+int main()
+{
+int n,m,no1,no2,f1,f2,i,j;
+scanf("%d",&n);
+int *a=(int*)malloc(sizeof(int)*n);
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+scanf("%d",&m);
+int *b=(int*)malloc(sizeof(int)*m);
+for(i=0;i<m;i++)
+scanf("%d",&b[i]);
+merge(a,0,n-1);
+merge(b,0,m-1);
+i=0,j=0;
+while(i<n&&j<m){
+no1=a[i];
+no2=b[j];
+f1=1,f2=1;
+if(no1==no2)
+{
+while(a[i]==a[i+1]){
+f1++;
+i++;
+}
+i++;
+while(b[j]==b[j+1]){
+f2++;
+j++;
+}
+j++;
+if(f1!=f2)
+    printf("%d ",no1);
+}   
+else if(no1<no2){
+printf("%d ",no1);
+i++;
+}
+else{
+printf("%d ",no2);
+j++;
+}  
+}
+    return 0;
+}
