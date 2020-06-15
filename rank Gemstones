@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+int i,n,count=0,c,flag=0,j;
+scanf("%d",&n);
+getchar();
+int a[n][27];
+for(i=0;i<n;i++)
+for(j=0;j<26;j++)
+a[i][j]=0;
+i=0;
+while(n-1>=i){
+while((c=getchar())!='\n'&&c!=EOF){
+a[i][c-'a']+=1;
+}
+i++;
+}
+for(j=0;j<26;j++){
+for(i=0;i<n;i++)
+if(a[i][j]==0)
+{
+flag=1;
+}
+if(flag==0)
+count++;
+flag=0;
+}
+printf("%d",count);
+    return 0;
+}
