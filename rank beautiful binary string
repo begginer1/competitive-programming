@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<malloc.h>
+int main()
+{
+int n,i,j,c=0;
+scanf("%d",&n);
+char *a=(char*)malloc(sizeof(char)*n);
+scanf("%s",a);
+char b[]="010";
+for(i=0;i<n;){
+for(j=0;j<3;j++){
+if(a[i]!=b[j]){
+break;
+}
+else
+i++;
+}
+if(j==3){
+a[i-1]=1;
+c+=1;
+}else
+i++;
+}
+printf("%d",c);
+    return 0;
+}
