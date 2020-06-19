@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+int t,n,m,c,choco,wrappers,s;
+scanf("%d",&t);
+while(t--)
+{
+scanf("%d%d%d",&n,&c,&m);
+choco=n/c;
+wrappers=choco;
+while(wrappers&&wrappers>=m)
+{
+s=wrappers/m;
+wrappers=wrappers%m;
+wrappers+=s;
+choco+=s;
+}
+printf("%d\n",choco);
+}
+    return 0;
+}
