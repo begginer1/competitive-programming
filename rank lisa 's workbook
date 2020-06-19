@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+int i,j,n,k,rem,q,c,p1,sp=0,page=0;
+scanf("%d%d",&n,&k);
+int *p=(int*)malloc(sizeof(int)*n);
+for(i=0;i<n;i++)
+scanf("%d",&p[i]);
+for(i=0;i<n;i++)
+{ c=1,p1=1;
+if(p[i]%k==0){
+q=p[i]/k;
+while(c<=q){
+    page++;
+if(p1<=page&&page<=c*k)
+sp++;   
+p1=k*c+1;
+c++;
+}
+}
+else {
+if(p[i]<k)
+{page++;
+    if(1<=page&&page<=p[i])
+    sp++;
+}
+else {
+q=p[i]/k;
+rem=p[i]%k;
+while(c<=q){
+    page++;
+    if(p1<=page&&page<=c*k)
+sp++;   
+
+p1=k*c+1;
+c++;
+}
+page++;
+if(page>=p1&&page<=((q*k)+rem))
+sp++;
+}
+}
+}
+printf("%d",sp);
+return 0;
+}
