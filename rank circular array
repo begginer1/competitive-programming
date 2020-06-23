@@ -1,23 +1,10 @@
-#include<stdio.h>
-void fun(int a[], int size)
-{ int i,key;
-for(i=size-1;i>1;i--)
-{
-if(i==size-1)
-{
-    key=a[0];
-    a[0]=a[size-1];
-}
-a[i]=a[(i)-1];
-}
-a[i]=key;
-} 
 
+#include<stdio.h>
 int main()
 {
 int i,k,n,q,m;
 scanf("%d%d%d",&n,&k,&q);
-int a[n];
+int a[n],temp[n];
 int rep[q];
 for(i=0;i<n;i++)
 scanf("%d",&a[i]);
@@ -25,15 +12,33 @@ for(i=0;i<q;i++)
 scanf("%d",&rep[i]);
 if(k%n!=0)                      //taking agr size jitna hah toh rotate nhi krna
 {
-while(k!=0)
-{
-fun(&a[0],n);
-k--;
+    if(k>n){
+        k=k%n;
+for(i=n-1;i>=0;i--){
+if((i+k)>=n)
+temp[(i+k)-n]=a[i];
+else 
+temp[i+k]=a[i];
+}
+for(i=0;i<q;i++)
+    printf("%d\n",temp[rep[i]]);
+}
+else {
+for(i=n-1;i>=0;i--){
+if((i+k)>=n)
+temp[(i+k)-n]=a[i];
+else 
+temp[i+k]=a[i];
+}
+for(i=0;i<q;i++)
+    printf("%d\n",temp[rep[i]]);
 }
 }
+else {
 for(i=0;i<q;i++)
 {
     printf("%d\n",a[rep[i]]);
+}
 }
 return 0;
 }
